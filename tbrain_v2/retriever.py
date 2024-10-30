@@ -12,13 +12,8 @@ class Retriever:
     def _bm25_retrieve(self, query: list[str], source: list[int], corpus_dict: dict):
         filtered_corpus = [corpus_dict[str(file)] for file in source]
         tokenized_corpus = filtered_corpus
-        with open("tokenized_corpus_v2.txt", "w", encoding="utf8") as f:
-            for doc in tokenized_corpus:
-                f.write(str(doc) + "\n")
         bm25 = BM25Okapi(tokenized_corpus)  # 使用BM25演算法建立檢索模型
         tokenized_query = query  # 將查詢語句進行分詞
-        with open("tokenized_query_v2.txt", "w", encoding="utf8") as f:
-            f.write(str(tokenized_query) + "\n")
         ans = bm25.get_top_n(
             tokenized_query, list(filtered_corpus), n=1
         )  # 根據查詢語句檢索，返回最相關的文檔，其中n為可調整項
