@@ -1,0 +1,11 @@
+**question 1**
+Email驗證信是否有時間限制?
+**answer 1**
+24小時後將會失效
+
+
+**question 2**
+若Email驗證信失效應如何處理?
+**answer 2**
+重新登入[玉山電子支付網站](https://web.esunbank.com.tw/ECPay/WebPage/Login.aspx)帳戶資訊>Email設定，重新輸入Email發送驗證信。
+

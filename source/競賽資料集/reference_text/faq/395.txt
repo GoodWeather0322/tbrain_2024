@@ -1,0 +1,47 @@
+**question 1**
+所有瀏覽器下都可以進行驗證嗎?
+**answer 1**
+請使用最低支援版本的瀏覽器與作業系統
+
+
+**question 2**
+有版本或系統的限制嗎?
+**answer 2**
+作業系統最低支援版本為：Windows 10, Mac OS 10.13 瀏覽器最低支援版本為：Chrome 88, IE 11, Edge 88, Firefox 86, Safari 12
+
+
+**question 3**
+Windows 10是否支援?
+**answer 3**
+是
+
+
+**question 4**
+Mac OS 10.13是否支援?
+**answer 4**
+是
+
+
+**question 5**
+Chrome 88是否為支援的最低版本?
+**answer 5**
+是
+
+
+**question 6**
+IE 11是否支援?
+**answer 6**
+是
+
+
+**question 7**
+Firefox 86是否為支援的最低版本?
+**answer 7**
+是
+
+
+**question 8**
+Safari 12是否支援?
+**answer 8**
+是
+

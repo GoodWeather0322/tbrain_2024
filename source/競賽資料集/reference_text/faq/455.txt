@@ -1,0 +1,11 @@
+**question 1**
+「玉山WebATM」是否可以在國外使用?
+**answer 1**
+可以
+
+
+**question 2**
+如何在國外使用「玉山WebATM」?
+**answer 2**
+只要您透過Internet連結到[本站](https://netbank.esunbank.com.tw/webatm/)即可使用。
+

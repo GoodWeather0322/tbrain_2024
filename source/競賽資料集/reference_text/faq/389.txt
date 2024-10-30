@@ -1,0 +1,12 @@
+**question 1**
+為什麼Edge瀏覽器無法顯示玉山WebATM?
+**answer 1**
+將「使Microsoft相容性清單」選項設定為未勾選
+
+
+**question 2**
+解決Edge瀏覽器無法顯示玉山WebATM的步驟是什麼?
+**answer 2**
+請於搜尋列輸入「about:flags」
+將「使Microsoft相容性清單」選項設定為未勾選，重新開啟Edge瀏覽器後即可開啟玉山WebATM
+

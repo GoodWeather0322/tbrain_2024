@@ -1,0 +1,15 @@
+**question 1**
+如何開通簡訊密碼服務?
+**answer 1**
+ATM開通方式
+網路銀行開通方式
+至臨櫃申請開通
+
+
+**question 2**
+簡訊密碼服務可以透過哪些方式開通?
+**answer 2**
+[ATM開通方式](https://www.esunbank.com.tw/event/member/otp/flow/atm.html)
+[網路銀行開通方式](https://www.esunbank.com.tw/event/member/otp/flow_ebank/ebank.html)
+至臨櫃申請開通
+

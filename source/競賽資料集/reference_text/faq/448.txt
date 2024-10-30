@@ -1,0 +1,28 @@
+**question 1**
+當讀卡機型號在WebATM網站上找不到時應如何處理?
+**answer 1**
+請依序檢查以下項目：
+
+- (1) 讀卡機是否已正確插入USB port。
+- (2) 讀卡機驅動程式是否已正確安裝。
+- (3) 確定「WebATM元件」是否已安裝完成或直接下載最新的「WebATM元件」並執行。(執行前請先關閉WebATM官方網站網頁)
+- (4) 請檢查Smart Card Service是否已啟動。
+
+
+**question 2**
+如何確認讀卡機已正確插入USB port?
+**answer 2**
+讀卡機是否已正確插入USB port。
+
+
+**question 3**
+安裝WebATM元件前應進行哪些步驟?
+**answer 3**
+執行前請先關閉WebATM官方網站網頁
+
+
+**question 4**
+如何檢查Smart Card Service是否已啟動?
+**answer 4**
+請檢查Smart Card Service是否已啟動。
+
