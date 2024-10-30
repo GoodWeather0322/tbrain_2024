@@ -1,0 +1,29 @@
+**question 1**
+Linux 上 使用 玉山 Web ATM 需要 哪些 作業 系統 版本 ?
+**answer1**
+64 位元 之 Ubuntu 16.04版 及 18.04版 。
+
+
+**question 2**
+使用 玉山 Web ATM 在 Linux 上 需要 哪些 瀏覽器 ?
+**answer2**
+Mozilla Fire fox 68 以上 /Google Chrome 65 以上 。
+
+
+**question 3**
+Linux 上 使用 玉山 Web ATM 需要 哪 種 讀卡機 ?
+**answer 3**
+有 提供 Linux 讀卡機 驅動 程式 之 PC/SCIC 讀卡機 或 CCID 相容 的 讀卡機 。
+
+
+**question 4**
+在 Linux 上 使用 玉山 Web ATM 前 需要 安裝 哪些 套件 ?
+**answer 4**
+需 先 安裝 pcscd 套件 ， 並 確認 已 正常 啟動 。
+
+
+**question 5**
+如何 在 Linux 上 安裝 玉山 Web ATM 的 相關 元件 ?
+**answer 5**
+安裝 玉山 銀行 Linux 專用 版本 元件 。
+

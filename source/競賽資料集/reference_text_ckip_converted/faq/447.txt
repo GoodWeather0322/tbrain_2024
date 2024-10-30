@@ -1,0 +1,18 @@
+**question 1**
+如何 查詢 信用卡 的 未 請款 消費 或 即時 交易 ?
+**answer1**
+行動 銀行
+玉山 Wallet
+
+
+**question 2**
+行動 銀行 查詢 信用卡 未 請款 消費 的 步驟 是 什麼 ?
+**answer2**
+登入 行動銀行 → 刷卡 明細 → 未 入帳 明細 → 近 三十 日 交易 紀錄 → 可 查詢 近 三十 日 即時 授權 之 交易 紀錄 ， 包含 商店 未 請款 、 已 請款 的 刷卡 明細 。
+
+
+**question 3**
+玉山 Wallet 如何 查詢 信用卡 即時 交易 ?
+**answer 3**
+登入 [ 玉山 Wallet ] ( https://card.esunbank.com.tw/Esun Creditweb/txnservice/esunwal let/transrecord )→ 支付 → 交易 紀錄 → 可 查詢 近 三十 日 即時 授權 之 交易 記錄 。
+

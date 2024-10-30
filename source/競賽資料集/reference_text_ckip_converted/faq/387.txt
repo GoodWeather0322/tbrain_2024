@@ -1,0 +1,37 @@
+**question 1**
+使用 玉山 WebATM 需要 什麼 樣 的 設備 ?
+**answer1**
+能 上網 ( Internet ) 之 PC 或 Notebook 。
+Windows 作業 系統 ： Windows 7 ( 含 ) 以上 版本 之 微軟 作業 系統 。
+Mac 作業 系統 ： Mac OS10.11 版本 以上 之 作業 系統 。
+Linux 作業 系統 ： 64 位元 之 Ubuntu16.04 版 及 18.04版 。
+建議 瀏覽器 版本 ： Microsoft IE9 以上 /Mozilla Firefox 68 以上 /Google Chrome 65 以上 /Safari10 以上 。
+讀卡機 ： 符合 PC／SC 規格 之 一 代 IC 讀卡機 ( 無 鍵盤 ) 。
+擁有 國內 任一 銀行 發 卡 之 晶片 金融卡 。
+
+
+**question 2**
+使用 玉山 Web ATM 需要 哪些 作業 系統 ?
+**answer2**
+Windows 作業 系統 ： Windows 7 ( 含 ) 以上 版本 之 微軟 作業 系統 。
+Mac 作業 系統 ： Mac OS10.11 版本 以上 之 作業 系統 。
+Linux 作業 系統 ： 64 位元 之 Ubuntu16.04 版 及 18.04版 。
+
+
+**question 3**
+使用 玉山 Web ATM 需要 哪些 瀏覽器 版本 ?
+**answer 3**
+Microsoft IE9 以上 /Mozilla Firefox 68 以上 /Google Chrome 65 以上 /Safari10 以上 。
+
+
+**question 4**
+使用 玉山 Web ATM 需要 什麼 樣 的 讀卡機 ?
+**answer 4**
+讀卡機 ： 符合 PC／SC 規格 之 一 代 IC 讀卡機 ( 無 鍵盤 ) 。
+
+
+**question 5**
+使用 玉山 WebATM 需要 什麼 樣 的 金融卡 ?
+**answer 5**
+擁有 國內 任一 銀行 發 卡 之 晶片 金融卡 。
+

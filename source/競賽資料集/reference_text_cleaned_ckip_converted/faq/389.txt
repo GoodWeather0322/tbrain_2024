@@ -1,0 +1,13 @@
+
+為什麼 Edge 瀏覽器 無法 顯示 玉山 Web ATM
+
+將 使 Microsoft 相容性 清單 選項 設定為 未 勾選
+
+
+
+解決 Edge 瀏覽器 無法 顯示 玉山 Web ATM 的 步驟 是 什麼
+
+請 於 搜尋列 輸入 about flags
+將 使 Microsoft 相容性 清單 選項 設定為 未 勾選 重新 開啟 Edge 瀏覽器 後 即可 開啟 玉山 Web ATM
+
+

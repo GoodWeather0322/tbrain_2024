@@ -1,0 +1,24 @@
+**question 1**
+使用 手機 號碼 轉帳 需要 進行 哪些 設定 ?
+**answer1**
+不須 另外 進行 設定
+
+
+**question 2**
+收款 者 使用 手機 號碼 轉帳 需要 完成 哪些 要件 ?
+**answer2**
+已 完成 「 手機 號碼 收款 」 註冊
+連結 帳戶 所屬 的 銀行 必須 參與 「 財金 公司 手機 門號 跨行 轉帳 平臺 」
+
+
+**question 3**
+哪裡 可以 查詢 參與 手機 號碼 轉帳 的 銀行 名單 ?
+**answer 3**
+[ 財金 公司 網站 ] ( https://www.fisc.com.tw/TC/Business?Caid =648 a5893 -107 b-4f23-8237 -32 cfc 3ac 1657 &tab =4 )
+
+
+**question 4**
+如何 使用 玉山 行動 銀行 進行 手機 號碼 轉帳 ?
+**answer 4**
+參考 [ 說明 頁面 ] ( https://www.esunbank.com.tw/event/member/phonetransfer/index.html#transfer )
+

@@ -1,0 +1,7 @@
+**question 1**
+如何 補寄 未 收到 的 信用卡 帳單 ?
+**answer1**
+個人 網路 銀行
+[ 智能 客服 ] ( https://robot.esunbank.com.tw/index.php?eservice=ehome &qaCategory=general )
+[ 線上 補寄 平臺 ] ( https://card.esunbank.com.tw/Esun Creditweb/txnservice/identify?PRJCD=BILLRSD#b )
+

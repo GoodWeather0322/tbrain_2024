@@ -1,0 +1,32 @@
+**question 1**
+在 Mac 上 使用 玉山 Web ATM 需要 哪些 基本 條件 ?
+**answer1**
+1.Mac 作業 系統 ： MacOSX10.11 以上 版本 之 作業 系統 。
+2. 建議 瀏覽器 版本 ： 使用 Safari10 以上 或 Mozilla Firefox 65 版本 。
+3 . 讀卡機 ： 相容 於 Mac OSX 的 晶片卡 讀卡機 ， 建議 採用 CCID 規格 的 讀卡機 。
+4. 接妥 讀卡機 ， 並且 在 終端機 用 pcsctest 指令 確認 讀卡機 運作 正常 。
+
+
+**question 2**
+使用 玉山 Web ATM 在 Mac 上 需要 哪 個 作業 系統 版本 ?
+**answer2**
+MacOSX10.11 以上 版本 之 作業 系統
+
+
+**question 3**
+玉山 Web ATM 在 Mac 上 推薦 使用 哪些 瀏覽器 版本 ?
+**answer 3**
+Safari 10 以上 或 Mozilla Fire fox 65 版本
+
+
+**question 4**
+在 Mac 上 使用 玉山 Web ATM 需要 什麼 樣 的 讀卡機 ?
+**answer 4**
+相容 於 MacOSX 的 晶片卡 讀卡機 ， 建議 採用 CCID 規格 的 讀卡機
+
+
+**question 5**
+如何 確認 讀卡機 在 Mac 上 運作 正常 ?
+**answer 5**
+接妥 讀卡機 ， 並且 在 終端機 用 pcsctest 指令 確認 讀卡機 運作 正常 。
+

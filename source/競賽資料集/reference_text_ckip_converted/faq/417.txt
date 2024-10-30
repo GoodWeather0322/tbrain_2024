@@ -1,0 +1,11 @@
+**question 1**
+如何 確認 WebATM 元件 已經 安裝 成功 ?
+**answer1**
+螢幕 右下角 -> 開啟 隱藏 圖示 -> 有 「 玉山 銀行 晶片 安控 元件 」 圖示 ， 即 代表 安裝 成功 。
+
+
+**question 2**
+未 安裝 WebATM 元件 應該 去 哪裡 下載 ?
+**answer2**
+[ 元件 下載區 ] ( https://netbank.esunbank.com.tw/webatm/#/download )
+

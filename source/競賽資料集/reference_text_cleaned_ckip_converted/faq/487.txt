@@ -1,0 +1,6 @@
+
+如何 安裝 pcscd 套件
+
+使用 Synaptic 套件 管理 程式 以 pcsc 關鍵字 搜尋 選取 如 圖 的 libccidlibpcscperlpcscdpcsctools 四 個 套件 然後 按下 套用 安裝 即可
+
+

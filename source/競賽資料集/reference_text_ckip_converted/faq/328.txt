@@ -1,0 +1,23 @@
+**question 1**
+如何 變更 玉山 電子 支付 帳戶 手機 號碼 ？
+**answer1**
+請 至 [ 玉山 電子 支付 網站 ] ( https://web.esunbank.com.tw/ECPay/Web Page/Login.aspx ) 點選 行動電話 變更 驗證 「 立即 前往 」
+
+
+**question 2**
+變更 玉山 電子 支付 帳戶 手機 號碼 後 ， 會 影響 玉山 Wallet 的 資料 嗎 ？
+**answer2**
+不會
+
+
+**question 3**
+哪些 電信商 的 門號 可以 使用 行動電話 變更 驗證 服務 ？
+**answer 3**
+中華 電信 、 臺灣 大哥大 、 臺灣 之 星 、 遠傳 電信 及 亞太 電信
+
+
+**question 4**
+非 指定 電信商 的 門號 如何 完成 玉山 電子 支付 帳戶 手機 號碼 變更 ？
+**answer 4**
+需 透過 人工 審核 完成 驗證 ， 請 參考 [ 如何 進行 玉山 電子 支付 行動電話 驗證 人工 審核 流程 ？ ] ( https://www.esunbank.com.tw/bank/about/faq/content?q=crossboarding/013 )
+

@@ -1,0 +1,5 @@
+**question 1**
+如何 查詢 信用卡 辦 卡 進度 ?
+**answer1**
+您 可 於 官網 [ 查詢 辦 卡 進度 ] ( https://card.esunbank.com.tw/Esun Creditweb/txnservice/accountapplyqry?funcid=Credit Card#b ) ， 完成 身分 驗證 後 查看 。
+

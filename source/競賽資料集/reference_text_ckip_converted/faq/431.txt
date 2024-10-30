@@ -1,0 +1,11 @@
+**question 1**
+玉山 Wallet 電子 支付 「 條碼 付 」 的 付款 方式 是 什麼 ？
+**answer1**
+完成 支付 工具 綁定 後 ， 於 玉山 Wallet 支付 頁面 點選 「 條碼付 」 ， 在 左上角 選擇 「 玉山 電子 支付 」 頁籤 ， 即可 挑選 各 付款 方式 ( 可 滑動 卡片 圖示 查詢 ) ， 出示 條碼 請 商家 掃描 即可 完成 付款 。
+
+
+**question 2**
+玉山 Wallet 電子 支付 可以 綁定 哪些 支付 工具 ？
+**answer2**
+玉山 電子 支付 可 綁定 支付 工具 說明 請見 [ 「 玉山 Wallet 電子 支付 可 綁定 哪些 支付 工具 呢 ？ ] ( https://www.esunbank.com/zh-tw/about/faq/content?q=crossboarding/016 ) 」 。
+

@@ -1,0 +1,7 @@
+**question 1**
+債券 類型 有 哪些 常見 的 分類 ?
+**answer1**
+固定 利率 債券 ( Fixed Rate Bond )
+浮動 利率 債券 ( Floating Rate Note )
+零息 債券 ( Zero Coupon Bond )
+

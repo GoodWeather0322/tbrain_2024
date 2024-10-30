@@ -1,0 +1,25 @@
+**question 1**
+投資 結構型 商品 有 哪些 風險 ?
+**answer1**
+最 低 收益 風險 ( Minimum Returnrisk )
+利率 風險 ( Interest Rate Risk )
+信用 風險 ( Credit Risk )
+匯率 風險 ( Exchange Rate Risk )
+事件 風險 ( Event Risk )
+國家 風險 ( Country Risk )
+交割 風險 ( Settlement Risk )
+受 連結標的 影響 之 風險 ( Sub-effect of Underlying Risk )
+通貨膨脹 風險 ( Inflation Risk )
+流動性 風險 ( Liquidity Risk )
+委託人 提前 贖回 風險 ( Early Redemption Risk )
+發行 機構 行使 提前 贖回 風險 ( Call Risk )
+再 投資 風險 ( Reinvestment Risk )
+閉鎖期 風險 ( Lock-up Period Risk )
+本金 轉換 風險 ( Convertible Risk )
+
+
+**question 2**
+投資 結構型 商品 前 應該 注意 什麼 ?
+**answer2**
+請 依 您 的 風險 承受 等級 審慎 評估 ， 始 進行 投資 。 詳細 風險 內容 請 參照 產品 說明書 。
+

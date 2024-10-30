@@ -1,0 +1,21 @@
+
+行動銀行畫面空白問題的原因是什麼
+
+因Android System WebView元件改版但手機裝置未進行更新
+
+
+
+解決行動銀行畫面空白問題的步驟有哪些
+
+將行動銀行APP從手機背景關閉
+關機後重新開機
+至Google Play商店搜尋Android System WebView
+重新開啟玉山行動銀行即可
+
+
+
+Android System WebView的Android最低版本需求是多少
+
+0以上
+
+

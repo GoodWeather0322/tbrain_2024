@@ -1,0 +1,44 @@
+**question 1**
+綜合 對帳單 可否 申請 補發 ?
+**answer1**
+可以
+
+
+**question 2**
+綜合 對帳單 申請 補發 方式 有 哪些 ?
+**answer2**
+網路 銀行
+行動 銀行
+致電 客服 中心
+
+
+**question 3**
+網路 銀行 補發 綜合 對帳單 的 連結 是 什麼 ?
+**answer 3**
+[ 電子 綜合 對帳單 下載 ] ( https://ebank.esunbank.com.tw/index.jsp#toTask Id=FAO05002 )
+
+
+**question 4**
+行動 銀行 補發 綜合 對帳單 的 連結 是 什麼 ?
+**answer 4**
+[ 電子 綜合 對帳單 下載 ] ( https://j3x8 a.app.goo.gl/Bank Statement Download )
+
+
+**question 5**
+致電 客服 中心 可以 補發 多久 以前 的 綜合 對帳單 ?
+**answer 5**
+近 3 個 月
+
+
+**question 6**
+網路 銀行 和 行動 銀行 可以 補發 多久 以前 的 綜合 對帳單 ?
+**answer 6**
+近 12 個 月
+
+
+**question 7**
+補發 綜合 對帳單 需要 登入 哪些 平臺 ?
+**answer 7**
+玉山 個人 網路 銀行
+玉山 行動 銀行
+

@@ -1,0 +1,23 @@
+**question 1**
+TLS 加密 通訊 協定 調整 的 目的 是 什麼 ?
+**answer1**
+為 持續 提供 您 安全 之 交易 作業 環境 ， 以 提高 網路 傳輸 資訊 安全 。
+
+
+**question 2**
+TLS 加密 通訊 協定 調整 後 不再 支援 哪些 技術 ?
+**answer2**
+TLS1.0 加密 通訊 協定 、 3 DES 加密 演算法 及 IE8 （ 含 ） 以下 版本 瀏覽器
+
+
+**question 3**
+若使用 IE 瀏覽器 ， 應 如何 因應 TLS 加密 通訊 協定 的 調整 ?
+**answer 3**
+建議 更新 至 IE9 以上 版本 ， 或 改使用 Chrome 、 Firefox 等 最 新 版本 之 瀏覽器 ， 並 啟用 TLS 1.1 以上 之 加密 通訊 協定
+
+
+**question 4**
+如何 查看 TLS 加密 通訊 協定 調整 的 詳細 教學 ?
+**answer 4**
+[ 說明 ] ( https://www.esunbank.com.tw/bank/about/faq/digital/netbank?list =33 )
+
