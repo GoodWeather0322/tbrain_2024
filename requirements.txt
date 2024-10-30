@@ -1,2 +1,7 @@
 tqdm
 pdfplumber
+opencc
+pydantic
+pydantic-settings
+rank_bm25
+jieba

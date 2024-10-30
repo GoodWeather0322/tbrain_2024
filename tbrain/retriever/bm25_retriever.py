@@ -1,13 +1,17 @@
 from rank_bm25 import BM25Okapi
 import jieba
 import json
+from tbrain.config.settings import settings
 
 
 class BM25Retriever:
     def __init__(self):
-        pass
+        if settings.tokenizer == "jieba":
+            self.retrieve = self.jieba_retrieve
+        elif settings.tokenizer == "ckip":
+            self.retrieve = self.ckip_retrieve
 
-    def retrieve(self, query: str, source: list[int], corpus_dict: dict):
+    def jieba_retrieve(self, query: str, source: list[int], corpus_dict: dict):
         filtered_corpus = [corpus_dict[int(file)] for file in source]
 
         # [TODO] 可自行替換其他檢索方式，以提升效能
@@ -23,6 +27,28 @@ class BM25Retriever:
         a = ans[0]
         # 找回與最佳匹配文本相對應的檔案名
         res = [key for key, value in corpus_dict.items() if value == a]
+        return res[0]  # 回傳檔案名
+
+    def ckip_retrieve(self, query: str, source: list[int], corpus_dict: dict):
+        filtered_corpus = [corpus_dict[int(file)] for file in source]
+
+        tokenized_corpus = [
+            doc.split(" ") for doc in filtered_corpus
+        ]  # 將每篇文檔進行分詞
+        with open("tokenized_corpus.txt", "w", encoding="utf8") as f:
+            for doc in tokenized_corpus:
+                f.write(str(doc) + "\n")
+        bm25 = BM25Okapi(tokenized_corpus)  # 使用BM25演算法建立檢索模型
+        tokenized_query = query.split(" ")  # 將查詢語句進行分詞
+        with open("tokenized_query.txt", "w", encoding="utf8") as f:
+            f.write(str(tokenized_query) + "\n")
+        filtered_corpus = [corpus.replace(" ", "") for corpus in filtered_corpus]
+        ans = bm25.get_top_n(
+            tokenized_query, list(filtered_corpus), n=1
+        )  # 根據查詢語句檢索，返回最相關的文檔，其中n為可調整項
+        a = ans[0]
+        # 找回與最佳匹配文本相對應的檔案名
+        res = [key for key, value in corpus_dict.items() if value.replace(" ", "") == a]
         return res[0]  # 回傳檔案名
 
     def retrieve_all(self, question_path, corpus_dict):
@@ -60,5 +86,7 @@ class BM25Retriever:
 
             else:
                 raise ValueError("Something went wrong")  # 如果過程有問題，拋出錯誤
+
+            break
 
         return answer_dict
