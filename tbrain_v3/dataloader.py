@@ -2,11 +2,12 @@ import json
 import re
 import os
 from tqdm import tqdm
+from pathlib import Path
 from opencc import OpenCC
-import jieba
-from ckip_transformers.nlp import CkipWordSegmenter, CkipPosTagger, CkipNerChunker
+import numpy as np
+from FlagEmbedding import BGEM3FlagModel
 
-from tbrain_v2.settings import settings
+from tbrain_v3.settings import settings
 
 
 class DataLoader:
@@ -15,6 +16,8 @@ class DataLoader:
         self.question_path = settings.question_path
 
         self.opencc = OpenCC("s2t")
+        if settings.embedding_model == "bge-m3":
+            self.embedding_model = BGEM3FlagModel("BAAI/bge-m3", use_fp16=True)
 
     def load_dataset(self):
         # 先找出跟問題相關的reference，不要做多餘運算
@@ -79,16 +82,24 @@ class DataLoader:
         corpus_name = "corpus_v3"
         if settings.clean_text:
             corpus_name += "_cleaned"
-        dataset_json_path = os.path.join(self.reference_path, f"{corpus_name}.json")
+        dataset_json_path = Path(self.reference_path) / f"{corpus_name}.json"
+        dataset_embedding_folder = (
+            Path(self.reference_path) / f"{corpus_name}_embedding"
+        )
+        dataset_embedding_folder.mkdir(parents=True, exist_ok=True)
 
         question_json_name = "questions_v3"
         if settings.clean_text:
             question_json_name += "_cleaned"
-        question_json_path = os.path.join(
-            os.path.dirname(self.question_path), f"{question_json_name}.json"
+        question_json_path = (
+            Path(self.question_path).parent / f"{question_json_name}.json"
         )
+        question_embedding_folder = (
+            Path(self.question_path).parent / f"{question_json_name}_embedding"
+        )
+        question_embedding_folder.mkdir(parents=True, exist_ok=True)
 
-        if os.path.exists(dataset_json_path):
+        if dataset_json_path.exists():
             with open(dataset_json_path, "r") as f:
                 dataset = json.load(f)
 
@@ -97,7 +108,6 @@ class DataLoader:
 
             return questions, dataset
 
-        self.ckip_ws = CkipWordSegmenter("bert-base")
         dataset = {
             "insurance": {},
             "finance": {},
@@ -116,17 +126,26 @@ class DataLoader:
                 ) as f:
                     text = f.read()
                     text = self._opencc_convert(text)
-                    texts = [text]
-                    texts = [text.replace(" ", "") for text in texts]
-                    if settings.clean_text:
-                        texts = [
-                            self._remove_stopwords(text) for text in texts
-                        ]  # list[str] -> list[str]
-                    if settings.tokenizer == "ckip":
-                        ws_list = self._ckip_tokenize(texts)
-                    elif settings.tokenizer == "jieba":
-                        ws_list = self._jieba_tokenize(texts)
-                    dataset[category][str(corpus_id)] = ws_list
+                    text = self._remove_stopwords(text)
+                    tokens = self.embedding_model.tokenizer.encode(text)
+                    split_texts = []
+                    for i in range(0, len(tokens), settings.stride):
+                        split_texts.append(
+                            self.embedding_model.tokenizer.decode(
+                                tokens[i : i + settings.max_tokens]
+                            )
+                        )
+                        if i + settings.max_tokens > len(tokens):
+                            break
+                    embedding_path = (
+                        dataset_embedding_folder / f"{category}_{corpus_id}.npy"
+                    )
+                    if not embedding_path.exists():
+                        embeddings = self.embedding_model.encode(
+                            split_texts, batch_size=4
+                        )["dense_vecs"]
+                        np.save(embedding_path, embeddings)
+                    dataset[category][str(corpus_id)] = str(embedding_path)
 
                 pbar.update(1)
 
@@ -134,11 +153,15 @@ class DataLoader:
         for question in questions:
             query = question["query"]
             query = self._remove_stopwords(query)
-            if settings.tokenizer == "ckip":
-                query_ws = self._ckip_tokenize([query])
-            elif settings.tokenizer == "jieba":
-                query_ws = self._jieba_tokenize([query])
-            question["query_ws"] = query_ws
+            tokens = self.embedding_model.tokenizer.encode(query)
+            if len(tokens) > 8192:
+                print(f"query length: {len(tokens)} exceed 8192, truncate to 8192")
+                query = self.embedding_model.tokenizer.decode(tokens[:8192])
+            embedding_path = question_embedding_folder / f"{question['qid']}.npy"
+            if not embedding_path.exists():
+                embedding = self.embedding_model.encode(query)["dense_vecs"]
+                np.save(embedding_path, embedding)
+            question["query_embedding"] = str(embedding_path)
             pbar.update(1)
 
         with open(dataset_json_path, "w") as f:

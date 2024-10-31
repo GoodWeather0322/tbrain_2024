@@ -11,6 +11,8 @@ class Settings(BaseSettings):
     data_type: str
     retriever: str
     embedding_model: str
+    max_tokens: int
+    stride: int
     clean_text: bool
     scorer: bool
 

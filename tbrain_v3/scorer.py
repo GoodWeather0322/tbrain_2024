@@ -1,6 +1,6 @@
 import json
 
-from tbrain_v2.settings import settings
+from tbrain_v3.settings import settings
 
 
 class Scorer:
