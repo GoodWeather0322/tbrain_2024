@@ -1,3 +1,7 @@
+"""
+V2: 使用傳統方法 => 斷詞 ( jieba, ckip-transformer ) + BM25進行資料檢索
+"""
+
 from tbrain_v2.settings import settings
 from tbrain_v2.dataloader import DataLoader
 from tbrain_v2.retriever import Retriever

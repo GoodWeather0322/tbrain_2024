@@ -1,3 +1,8 @@
+"""
+V1: 舊版程式碼，使用傳統方法 => 斷詞 ( jieba, ckip-transformer ) + BM25進行資料檢索
+V1版本不易維護，請使用V2版本
+"""
+
 import argparse
 import json
 import os
