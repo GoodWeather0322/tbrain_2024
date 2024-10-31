@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     output_dir: str
     data_type: str
     retriever: str
-    tokenizer: str
+    embedding_model: str
     clean_text: bool
     scorer: bool
 
@@ -24,4 +24,4 @@ class Settings(BaseSettings):
         return cls(**config_data)
 
 
-settings = Settings.from_yaml("config.yaml")
+settings = Settings.from_yaml("config_v3.yaml")
