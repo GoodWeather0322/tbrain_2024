@@ -35,7 +35,7 @@ class Retriever:
         answer_dict_name = "answer_v3"
         if settings.clean_text:
             answer_dict_name += "_clean"
-        answer_dict_name += ".json"
+        answer_dict_name += f"_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}.json"
         answer_dict_path = Path(settings.output_dir) / answer_dict_name
 
         answer_dict = {"answers": []}  # 初始化字典

@@ -18,6 +18,10 @@ class DataLoader:
         self.opencc = OpenCC("s2t")
         if settings.embedding_model == "bge-m3":
             self.embedding_model = BGEM3FlagModel("BAAI/bge-m3", use_fp16=True)
+        elif settings.embedding_model == "bge-large-zh-v1.5":
+            self.embedding_model = BGEM3FlagModel(
+                "BAAI/bge-large-zh-v1.5", use_fp16=True
+            )
 
     def load_dataset(self):
         # 先找出跟問題相關的reference，不要做多餘運算
@@ -82,9 +86,13 @@ class DataLoader:
         corpus_name = "corpus_v3"
         if settings.clean_text:
             corpus_name += "_cleaned"
-        dataset_json_path = Path(self.reference_path) / f"{corpus_name}.json"
+        dataset_json_path = (
+            Path(self.reference_path)
+            / f"{corpus_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}.json"
+        )
         dataset_embedding_folder = (
-            Path(self.reference_path) / f"{corpus_name}_embedding"
+            Path(self.reference_path)
+            / f"{corpus_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}"
         )
         dataset_embedding_folder.mkdir(parents=True, exist_ok=True)
 
@@ -92,10 +100,12 @@ class DataLoader:
         if settings.clean_text:
             question_json_name += "_cleaned"
         question_json_path = (
-            Path(self.question_path).parent / f"{question_json_name}.json"
+            Path(self.question_path).parent
+            / f"{question_json_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}.json"
         )
         question_embedding_folder = (
-            Path(self.question_path).parent / f"{question_json_name}_embedding"
+            Path(self.question_path).parent
+            / f"{question_json_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}"
         )
         question_embedding_folder.mkdir(parents=True, exist_ok=True)
 

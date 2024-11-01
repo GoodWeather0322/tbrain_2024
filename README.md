@@ -23,6 +23,8 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 
 ## v3 version code (Embedding)
 
-| 實驗名稱 | data_type | retriever | embedding | clean_text | Precision  | 備註 |
-|----------|-----------|-----------|-----------|------------|------|------|
-| exp 1    | ocr_text  | consine      | bge-m3      | True       | 0.7533333  |    --  |
+| 實驗名稱 | data_type | retriever | embedding | max_tokens | stride | clean_text | Precision  | 備註 |
+|----------|-----------|-----------|-----------|------------|--------|------------|------|------|
+| exp 1    | ocr_text  | consine      | bge-m3      | 4096       | 3072   | True       | 0.7533333  |    --  |
+| exp 2    | ocr_text  | consine      | bge-m3      | 500       | 128   | True       | 0.8066667  |    --  |
+| exp 3    | ocr_text  | consine      | bge-large-zh-v1.5      | 500       | 128   | True       | 0.82  |    --  |

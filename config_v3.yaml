@@ -7,7 +7,7 @@ data_type: ocr_text
 retriever: cosine_similarity
 clean_text: True
 embedding_model: bge-m3
-max_tokens: 4096
-stride: 3072
+max_tokens: 500
+stride: 128
 
 scorer: True
