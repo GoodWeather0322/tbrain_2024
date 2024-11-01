@@ -86,6 +86,8 @@ class DataLoader:
         corpus_name = "corpus_v3"
         if settings.clean_text:
             corpus_name += "_cleaned"
+        if settings.retriever == "sparse":
+            corpus_name += "_sparse"
         dataset_json_path = (
             Path(self.reference_path)
             / f"{corpus_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}.json"
@@ -99,6 +101,8 @@ class DataLoader:
         question_json_name = "questions_v3"
         if settings.clean_text:
             question_json_name += "_cleaned"
+        if settings.retriever == "sparse":
+            question_json_name += "_sparse"
         question_json_path = (
             Path(self.question_path).parent
             / f"{question_json_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}.json"
@@ -154,9 +158,15 @@ class DataLoader:
                     )
                     if not embedding_path.exists():
                         embeddings = self.embedding_model.encode(
-                            split_texts, batch_size=4
-                        )["dense_vecs"]
-                        np.save(embedding_path, embeddings)
+                            split_texts,
+                            return_dense=True,
+                            return_sparse=True,
+                            batch_size=4,
+                        )
+                        if settings.retriever == "sparse":
+                            np.save(embedding_path, embeddings["lexical_weights"])
+                        else:
+                            np.save(embedding_path, embeddings["dense_vecs"])
                     dataset[category][str(corpus_id)] = str(embedding_path)
 
                 pbar.update(1)
@@ -173,8 +183,17 @@ class DataLoader:
                 query = self.embedding_model.tokenizer.decode(tokens[:8192])
             embedding_path = question_embedding_folder / f"{question['qid']}.npy"
             if not embedding_path.exists():
-                embedding = self.embedding_model.encode(query)["dense_vecs"]
-                np.save(embedding_path, embedding)
+                if settings.retriever == "sparse":
+                    query = [query]
+                embedding = self.embedding_model.encode(
+                    query,
+                    return_dense=True,
+                    return_sparse=True,
+                )
+                if settings.retriever == "sparse":
+                    np.save(embedding_path, embedding["lexical_weights"])
+                else:
+                    np.save(embedding_path, embedding["dense_vecs"])
             question["query_embedding"] = str(embedding_path)
             pbar.update(1)
 

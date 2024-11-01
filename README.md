@@ -28,6 +28,7 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 | exp 1    | ocr_text  | consine      | bge-m3      | 4096       | 3072   | True       | 0.7533333  |    --  |
 | exp 2    | ocr_text  | consine      | bge-m3      | 512       | 128   | True       | 0.7933333  |    --  |
 | exp 3    | ocr_text  | consine      | bge-large-zh-v1.5      | 500       | 128   | True       | 0.8066667  |    --  |
+| exp 4    | ocr_text  | sparse      | bge-m3      | 4096       | 3072   | True       | 0.7933333  |    --  |
 
 ## v4 version code (Reranker)
 
