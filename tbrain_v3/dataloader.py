@@ -137,7 +137,9 @@ class DataLoader:
                     text = f.read()
                     text = self._opencc_convert(text)
                     text = self._remove_stopwords(text)
-                    tokens = self.embedding_model.tokenizer.encode(text)
+                    tokens = self.embedding_model.tokenizer.encode(
+                        text, add_special_tokens=False
+                    )
                     split_texts = []
                     for i in range(0, len(tokens), settings.stride):
                         split_texts.append(
@@ -163,7 +165,9 @@ class DataLoader:
         for question in questions:
             query = question["query"]
             query = self._remove_stopwords(query)
-            tokens = self.embedding_model.tokenizer.encode(query)
+            tokens = self.embedding_model.tokenizer.encode(
+                query, add_special_tokens=False
+            )
             if len(tokens) > 8192:
                 print(f"query length: {len(tokens)} exceed 8192, truncate to 8192")
                 query = self.embedding_model.tokenizer.decode(tokens[:8192])
