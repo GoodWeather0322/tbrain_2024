@@ -32,3 +32,5 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 ## v4 version code (Reranker)
 
 | 實驗名稱 | data_type | reranker | max_tokens | stride | clean_text | Precision  | 備註 |
+|----------|-----------|-----------|------------|--------|------------|------|------|
+| exp 1    | ocr_text  | bge-reranker-v2-m3   | 2048       | 512   | True       | 0.7933333  |    --  |
