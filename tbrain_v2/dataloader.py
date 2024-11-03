@@ -108,6 +108,7 @@ class DataLoader:
         )
 
         if os.path.exists(dataset_json_path):
+            print(f"load dataset from {dataset_json_path}")
             with open(dataset_json_path, "r") as f:
                 dataset = json.load(f)
 

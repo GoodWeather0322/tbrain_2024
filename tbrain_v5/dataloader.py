@@ -5,9 +5,9 @@ from tqdm import tqdm
 from pathlib import Path
 from opencc import OpenCC
 import numpy as np
-from FlagEmbedding import BGEM3FlagModel
+from FlagEmbedding import FlagReranker
 
-from tbrain_v3.settings import settings
+from tbrain_v5.settings import settings
 
 
 class DataLoader:
@@ -16,12 +16,8 @@ class DataLoader:
         self.question_path = settings.question_path
 
         self.opencc = OpenCC("s2t")
-        if settings.embedding_model == "bge-m3":
-            self.embedding_model = BGEM3FlagModel("BAAI/bge-m3", use_fp16=True)
-        elif settings.embedding_model == "bge-large-zh-v1.5":
-            self.embedding_model = BGEM3FlagModel(
-                "BAAI/bge-large-zh-v1.5", use_fp16=True
-            )
+        if settings.reranker == "bge-reranker-v2-m3":
+            self.rerank_model = FlagReranker("BAAI/bge-reranker-v2-m3", use_fp16=True)
 
     def load_dataset(self):
         # 先找出跟問題相關的reference，不要做多餘運算
@@ -83,38 +79,23 @@ class DataLoader:
 
     def preprocess_dataset(self, questions: list, related_corpus_ids: dict):
 
-        corpus_name = "corpus_v3"
+        corpus_name = "corpus_v4"
         if settings.clean_text:
             corpus_name += "_cleaned"
-        if settings.retriever == "sparse":
-            corpus_name += "_sparse"
         dataset_json_path = (
             Path(self.reference_path)
-            / f"{corpus_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}.json"
+            / f"{corpus_name}_rerank_{settings.reranker}_{settings.max_tokens}_{settings.stride}.json"
         )
-        dataset_embedding_folder = (
-            Path(self.reference_path)
-            / f"{corpus_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}"
-        )
-        dataset_embedding_folder.mkdir(parents=True, exist_ok=True)
 
-        question_json_name = "questions_v3"
+        question_json_name = "questions_v4"
         if settings.clean_text:
             question_json_name += "_cleaned"
-        if settings.retriever == "sparse":
-            question_json_name += "_sparse"
         question_json_path = (
             Path(self.question_path).parent
-            / f"{question_json_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}.json"
+            / f"{question_json_name}_rerank_{settings.reranker}_{settings.max_tokens}_{settings.stride}.json"
         )
-        question_embedding_folder = (
-            Path(self.question_path).parent
-            / f"{question_json_name}_embedding_{settings.embedding_model}_{settings.max_tokens}_{settings.stride}"
-        )
-        question_embedding_folder.mkdir(parents=True, exist_ok=True)
 
         if dataset_json_path.exists():
-            print(f"load dataset from {dataset_json_path}")
             with open(dataset_json_path, "r") as f:
                 dataset = json.load(f)
 
@@ -142,33 +123,19 @@ class DataLoader:
                     text = f.read()
                     text = self._opencc_convert(text)
                     text = self._remove_stopwords(text)
-                    tokens = self.embedding_model.tokenizer.encode(
+                    tokens = self.rerank_model.tokenizer.encode(
                         text, add_special_tokens=False
                     )
                     split_texts = []
                     for i in range(0, len(tokens), settings.stride):
                         split_texts.append(
-                            self.embedding_model.tokenizer.decode(
+                            self.rerank_model.tokenizer.decode(
                                 tokens[i : i + settings.max_tokens]
                             )
                         )
                         if i + settings.max_tokens > len(tokens):
                             break
-                    embedding_path = (
-                        dataset_embedding_folder / f"{category}_{corpus_id}.npy"
-                    )
-                    if not embedding_path.exists():
-                        embeddings = self.embedding_model.encode(
-                            split_texts,
-                            return_dense=True,
-                            return_sparse=True,
-                            batch_size=4,
-                        )
-                        if settings.retriever == "sparse":
-                            np.save(embedding_path, embeddings["lexical_weights"])
-                        else:
-                            np.save(embedding_path, embeddings["dense_vecs"])
-                    dataset[category][str(corpus_id)] = str(embedding_path)
+                    dataset[category][str(corpus_id)] = split_texts
 
                 pbar.update(1)
 
@@ -176,26 +143,11 @@ class DataLoader:
         for question in questions:
             query = question["query"]
             query = self._remove_stopwords(query)
-            tokens = self.embedding_model.tokenizer.encode(
-                query, add_special_tokens=False
-            )
+            tokens = self.rerank_model.tokenizer.encode(query, add_special_tokens=False)
             if len(tokens) > 8192:
                 print(f"query length: {len(tokens)} exceed 8192, truncate to 8192")
-                query = self.embedding_model.tokenizer.decode(tokens[:8192])
-            embedding_path = question_embedding_folder / f"{question['qid']}.npy"
-            if not embedding_path.exists():
-                if settings.retriever == "sparse":
-                    query = [query]
-                embedding = self.embedding_model.encode(
-                    query,
-                    return_dense=True,
-                    return_sparse=True,
-                )
-                if settings.retriever == "sparse":
-                    np.save(embedding_path, embedding["lexical_weights"])
-                else:
-                    np.save(embedding_path, embedding["dense_vecs"])
-            question["query_embedding"] = str(embedding_path)
+                query = self.rerank_model.tokenizer.decode(tokens[:8192])
+            question["query_rerank"] = query
             pbar.update(1)
 
         with open(dataset_json_path, "w") as f:
