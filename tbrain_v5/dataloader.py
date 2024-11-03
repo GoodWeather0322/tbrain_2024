@@ -20,23 +20,7 @@ class DataLoader:
             self.rerank_model = FlagReranker("BAAI/bge-reranker-v2-m3", use_fp16=True)
 
     def load_dataset(self):
-        # 先找出跟問題相關的reference，不要做多餘運算
-        related_reference = {
-            "insurance": [],
-            "finance": [],
-            "faq": [],
-        }
-        with open(self.question_path, "r") as f:
-            data = json.load(f)
-        questions = data["questions"]
-        for question in questions:
-            source = question["source"]
-            category = question["category"]
-            related_reference[category].extend(source)
-        for category, source in related_reference.items():
-            related_reference[category] = sorted(list(set(source)))
-
-        return questions, related_reference
+        raise NotImplementedError
 
     def _opencc_convert(self, text: str):
         text = self.opencc.convert(text)
@@ -79,81 +63,4 @@ class DataLoader:
 
     def preprocess_dataset(self, questions: list, related_corpus_ids: dict):
 
-        corpus_name = "corpus_v4"
-        if settings.clean_text:
-            corpus_name += "_cleaned"
-        dataset_json_path = (
-            Path(self.reference_path)
-            / f"{corpus_name}_rerank_{settings.reranker}_{settings.max_tokens}_{settings.stride}.json"
-        )
-
-        question_json_name = "questions_v4"
-        if settings.clean_text:
-            question_json_name += "_cleaned"
-        question_json_path = (
-            Path(self.question_path).parent
-            / f"{question_json_name}_rerank_{settings.reranker}_{settings.max_tokens}_{settings.stride}.json"
-        )
-
-        if dataset_json_path.exists():
-            with open(dataset_json_path, "r") as f:
-                dataset = json.load(f)
-
-            with open(question_json_path, "r") as f:
-                questions = json.load(f)
-
-            return questions, dataset
-
-        dataset = {
-            "insurance": {},
-            "finance": {},
-            "faq": {},
-        }
-
-        total = 0
-        for category, corpus_ids in related_corpus_ids.items():
-            total += len(corpus_ids)
-
-        pbar = tqdm(total=total)
-        for category, corpus_ids in related_corpus_ids.items():
-            for corpus_id in corpus_ids:
-                with open(
-                    f"{self.reference_path}/{category}/{corpus_id}.txt", "r"
-                ) as f:
-                    text = f.read()
-                    text = self._opencc_convert(text)
-                    text = self._remove_stopwords(text)
-                    tokens = self.rerank_model.tokenizer.encode(
-                        text, add_special_tokens=False
-                    )
-                    split_texts = []
-                    for i in range(0, len(tokens), settings.stride):
-                        split_texts.append(
-                            self.rerank_model.tokenizer.decode(
-                                tokens[i : i + settings.max_tokens]
-                            )
-                        )
-                        if i + settings.max_tokens > len(tokens):
-                            break
-                    dataset[category][str(corpus_id)] = split_texts
-
-                pbar.update(1)
-
-        pbar = tqdm(total=len(questions))
-        for question in questions:
-            query = question["query"]
-            query = self._remove_stopwords(query)
-            tokens = self.rerank_model.tokenizer.encode(query, add_special_tokens=False)
-            if len(tokens) > 8192:
-                print(f"query length: {len(tokens)} exceed 8192, truncate to 8192")
-                query = self.rerank_model.tokenizer.decode(tokens[:8192])
-            question["query_rerank"] = query
-            pbar.update(1)
-
-        with open(dataset_json_path, "w") as f:
-            json.dump(dataset, f, ensure_ascii=False, indent=4)
-
-        with open(question_json_path, "w") as f:
-            json.dump(questions, f, ensure_ascii=False, indent=4)
-
-        return questions, dataset
+        raise NotImplementedError

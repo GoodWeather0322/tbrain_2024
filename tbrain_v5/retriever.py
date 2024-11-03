@@ -54,9 +54,8 @@ class Retriever:
         for i, (bm25_score, cosine_score) in enumerate(
             zip(bm25_scores_match_length, cosine_similarity)
         ):
-            fusion_scores.append(
-                settings.alpha * bm25_score + (1 - settings.alpha) * cosine_score
-            )
+            score = settings.alpha * bm25_score + (1 - settings.alpha) * cosine_score
+            fusion_scores.append(score)
         max_index = np.argmax(fusion_scores)
         max_id = corpus_ids[max_index]
         return max_id
