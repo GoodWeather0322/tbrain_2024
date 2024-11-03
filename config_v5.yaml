@@ -15,5 +15,5 @@ embedding_model: bge-large-zh-v1.5
 max_tokens: 500
 stride: 128
 
-alpha: 0.1
+alpha: 0.09
 scorer: True

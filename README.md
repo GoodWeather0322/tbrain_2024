@@ -17,9 +17,9 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 | 實驗名稱 | data_type | retriever | tokenizer | clean_text | Precision  | 備註 |
 |----------|-----------|-----------|-----------|------------|------|------|
 | exp 1    | ocr_text  | bm25      | jieba      | False       | 0.7266667  |    --  |
-| exp 2    | ocr_text  | bm25      | jieba      | True       | 0.7733333  |   --  |
+| exp 2    | ocr_text  | bm25      | jieba      | True       | 0.7933333  |   --  |
 | exp 3    | ocr_text  | bm25      | ckip      | False       | 0.7866667  |   --  |
-| exp 4    | ocr_text  | bm25      | ckip      | True       | 0.8066667  |   --  |
+| exp 4    | ocr_text  | bm25      | ckip      | True       | 0.8133333  |   --  |
 
 ## v3 version code (Embedding)
 
@@ -39,7 +39,7 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 ## v5 version code (BM25 + Embedding) (V2 + V3 做 shallow fusion)
 | 實驗名稱 | data_type | v2 tokenizer | v3 embedding | max_tokens | stride | normalize | alpha | clean_text | Precision  | 備註 |
 |----------|-----------|-----------|------------|--------|------------|------|------|------|------|------|
-| exp 1    | ocr_text  | ckip   | bge-m3      | 4096       | 3072   | minmax   | 0.1   | True       | 0.8733333  |    alpha 0.1最佳  |
-| exp 2    | ocr_text  | ckip   | bge-m3      | 4096       | 3072   | zscore   | 0.05   | True       | 0.86  |    alpha 0.05最佳  |
-| exp 3    | ocr_text  | ckip   | bge-m3      | 512       | 128   | minmax   | 0.05   | True       | 0.8733333  |    alpha 0.1最佳  |
-| exp 3    | ocr_text  | ckip   | bge-large-zh-v1.5      | 500       | 128   | minmax   | 0.1   | True       | 0.86  |    alpha 0.1最佳  |
+| exp 1    | ocr_text  | ckip   | bge-m3      | 4096       | 3072   | minmax   | 0.12   | True       | 0.8866667  |    alpha 0.12 最佳  |
+| exp 2    | ocr_text  | ckip   | bge-m3      | 4096       | 3072   | zscore   | 0.05   | True       | 0.8733333  |    alpha 0.05最佳  |
+| exp 3    | ocr_text  | ckip   | bge-m3      | 512       | 128   | minmax   | 0.12   | True       | 0.8933333  |    alpha 0.12最佳  |
+| exp 3    | ocr_text  | ckip   | bge-large-zh-v1.5      | 500       | 128   | minmax   | 0.09   | True       | 0.8666667  |    alpha 0.09最佳  |

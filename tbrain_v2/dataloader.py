@@ -137,11 +137,11 @@ class DataLoader:
                     text = f.read()
                     text = self._opencc_convert(text)
                     texts = [text]
-                    texts = [text.replace(" ", "") for text in texts]
                     if settings.clean_text:
                         texts = [
                             self._remove_stopwords(text) for text in texts
                         ]  # list[str] -> list[str]
+                    texts = [text.replace(" ", "") for text in texts]
                     if settings.tokenizer == "ckip":
                         ws_list = self._ckip_tokenize(texts)
                     elif settings.tokenizer == "jieba":
