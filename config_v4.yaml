@@ -7,7 +7,7 @@ data_type: ocr_text
 
 clean_text: True
 reranker: bge-reranker-v2-m3
-max_tokens: 2048
-stride: 512
+max_tokens: 128
+stride: 64
 
 scorer: True

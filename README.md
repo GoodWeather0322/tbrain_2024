@@ -29,12 +29,19 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 | exp 2    | ocr_text  | consine      | bge-m3      | 512       | 128   | True       | 0.7933333  |    --  |
 | exp 3    | ocr_text  | consine      | bge-large-zh-v1.5      | 500       | 128   | True       | 0.8066667  |    --  |
 | exp 4    | ocr_text  | sparse      | bge-m3      | 4096       | 3072   | True       | 0.7933333  |    --  |
+| exp 5    | ocr_text  | sparse      | bge-m3      | 256       | 128   | True       | 0.86  |   --  |
+| exp 6    | ocr_text  | sparse      | bge-m3     | 128       | 64   | True       | 0.8333333  |   --  |
+| exp 7    | ocr_text  | sparse      | bge-large-zh-v1.5     | 256       | 128   | True       | 0.82  |   --  |
+| exp 8    | ocr_text  | sparse      | bge-large-zh-v1.5     | 128       | 64   | True       | 0.8733333  |   --  |
 
 ## v4 version code (Reranker)
 
 | 實驗名稱 | data_type | reranker | max_tokens | stride | clean_text | Precision  | 備註 |
 |----------|-----------|-----------|------------|--------|------------|------|------|
 | exp 1    | ocr_text  | bge-reranker-v2-m3   | 2048       | 512   | True       | 0.7933333  |    --  |
+| exp 2    | ocr_text  | bge-reranker-v2-m3   | 512       | 256   | True       | 0.8733333  |    --  |
+| exp 3    | ocr_text  | bge-reranker-v2-m3   | 256       | 128   | True       | 0.86  |    --  |
+| exp 4    | ocr_text  | bge-reranker-v2-m3   | 128       | 64   | True       | 0.8933333  |    --  |
 
 ## v5 version code (BM25 + Embedding) (V2 + V3 做 shallow fusion)
 | 實驗名稱 | data_type | v2 tokenizer | v3 embedding | max_tokens | stride | normalize | alpha | clean_text | Precision  | 備註 |
