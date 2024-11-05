@@ -121,7 +121,7 @@ class Retriever:
         with open(answer_dict_path, "w", encoding="utf8") as f:
             json.dump(answer_dict, f, ensure_ascii=False, indent=4)
 
-        return answer_dict
+        return answer_dict, answer_dict_path
 
     def retrieve(
         self, questions_bm25, dataset_bm25, questions_embedding, dataset_embedding

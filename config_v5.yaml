@@ -12,8 +12,8 @@ normalize: minmax
 
 retriever_v3: cosine_similarity
 embedding_model: bge-large-zh-v1.5
-max_tokens: 500
-stride: 128
+max_tokens: 128
+stride: 64
 
 alpha: 0.09
 scorer: True

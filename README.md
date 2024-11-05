@@ -49,7 +49,11 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 | exp 1    | ocr_text  | ckip   | bge-m3      | 4096       | 3072   | minmax   | 0.12   | True       | 0.8866667  |    alpha 0.12 最佳  |
 | exp 2    | ocr_text  | ckip   | bge-m3      | 4096       | 3072   | zscore   | 0.05   | True       | 0.8733333  |    alpha 0.05最佳  |
 | exp 3    | ocr_text  | ckip   | bge-m3      | 512       | 128   | minmax   | 0.12   | True       | 0.8933333  |    alpha 0.12最佳  |
-| exp 3    | ocr_text  | ckip   | bge-large-zh-v1.5      | 500       | 128   | minmax   | 0.09   | True       | 0.8666667  |    alpha 0.09最佳  |
+| exp 4    | ocr_text  | ckip   | bge-large-zh-v1.5      | 500       | 128   | minmax   | 0.09   | True       | 0.8666667  |    alpha 0.09最佳  |
+| exp 5    | ocr_text  | ckip   | bge-m3    | 256       | 128   | minmax   | 0.12   | True       | 0.9066666  |    alpha 0.12最佳  |
+| exp 6    | ocr_text  | ckip   | bge-m3    | 128       | 64   | minmax   | 0.09   | True       | 0.9  |    alpha 0.09最佳  |
+| exp 7    | ocr_text  | ckip   | bge-large-zh-v1.5    | 256       | 128   | minmax   | 0.03   | True       | 0.86  |    alpha 0.03最佳  |
+| exp 8    | ocr_text  | ckip   | bge-large-zh-v1.5   | 128       | 64   | minmax   | 0.09   | True       | 0.8933333  |    alpha 0.09最佳  |
 
 ## v6 version code (BM25 + Embedding + LCS) (V2 + V3 + LCS 做 shallow fusion)
 | 實驗名稱 | data_type | v2 tokenizer | v3 embedding | max_tokens | stride | normalize | alpha | beta | clean_text | Precision  | 備註 |
