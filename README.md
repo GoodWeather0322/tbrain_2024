@@ -69,7 +69,19 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 ## v7 version code (chunk BM25 + Embedding) (chunk版本 V2 + V3 做 shallow fusion)
 | 實驗名稱 | data_type | v2 tokenizer | v3 embedding | max_tokens | stride | normalize | alpha | clean_text | Precision  | 備註 |
 |----------|-----------|-----------|------------|--------|------------|------|------|------|------|------|
-| exp 1    | ocr_text  | ckip   | bge-m3    | 256       | 128   | minmax   | 0.25   | True       | 0.9133333  |    --  |
-| exp 2    | ocr_text  | ckip   | bge-m3    | 128       | 64   | minmax   | 0.12   | True       | 0.8933333  |   --  |
-| exp 3    | ocr_text  | ckip   | bge-large-zh-v1.5    | 256       | 128   | minmax   | 0.15  | True       | 0.9133333  |   -- |
+| exp 1    | ocr_text  | ckip   | bge-m3    | 256       | 128   | minmax   | 0.25   | True       | 0.9133333  |  --  |
+| exp 2    | ocr_text  | ckip   | bge-m3    | 128       | 64   | minmax   | 0.12   | True       | 0.8933333  |  --  |
+| exp 3    | ocr_text  | ckip   | bge-large-zh-v1.5    | 256       | 128   | minmax   | 0.15  | True       | 0.9133333  |  -- |
 | exp 4    | ocr_text  | ckip   | bge-large-zh-v1.5   | 128       | 64   | minmax   | 0.1  | True       | 0.92  |   --  |
+
+## v8 version code (chunk BM25 + Embedding + LCS) (chunk版本 V2 + V3 + LCS 做 shallow fusion)
+| 實驗名稱 | data_type | v2 tokenizer | v3 embedding | max_tokens | stride | normalize | alpha | beta | clean_text | Precision  | 備註 |
+|----------|-----------|-----------|------------|--------|------------|------|------|------|------|------|------|
+| exp 1    | ocr_text  | ckip   | bge-m3    | 256       | 128   | minmax   | 0.18   | 0.26   | True       | 0.9133333  |    --  |
+| exp 2    | ocr_text  | ckip   | bge-m3    | 128       | 64   | minmax   | 0.09   | 0.22   | True       | 0.8933333  |   --  |
+| exp 3    | ocr_text  | ckip   | bge-large-zh-v1.5    | 256       | 128   | minmax   | 0.11  | 0.24   | True       | 0.9133333  |   -- |
+| exp 4    | ocr_text  | ckip   | bge-large-zh-v1.5   | 128       | 64   | minmax   | 0.07  | 0.26   | True       | 0.92  |   --  |
+
+## v9 version code (chunk BM25 + Reranker) (chunk版本 V2 + V4 做 shallow fusion)
+| 實驗名稱 | data_type | v2 tokenizer | v4 reranker | max_tokens | stride | normalize | alpha | clean_text | Precision  | 備註 |
+|----------|-----------|-----------|------------|--------|------------|------|------|------|------|------|
