@@ -35,8 +35,10 @@ class Retriever:
                 else:
                     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 
-        # LCS 長度位於表格的右下角
-        return dp[len(query_words)][len(document_words)]
+        # LCS 長度位於表格的右下角，除以最短的長度做normalize
+        return dp[len(query_words)][len(document_words)] / min(
+            len(query_words), len(document_words)
+        )
 
     def _fusion_retrieve(
         self, query_bm25, query_embedding_file, source, corpus_bm25, corpus_embedding
@@ -49,12 +51,6 @@ class Retriever:
             lcs_scores.append(lcs_length)
 
         lcs_scores = np.array(lcs_scores)
-        if settings.normalize == "minmax":
-            lcs_scores = (lcs_scores - np.min(lcs_scores)) / (
-                np.max(lcs_scores) - np.min(lcs_scores)
-            )
-        elif settings.normalize == "zscore":
-            lcs_scores = (lcs_scores - np.mean(lcs_scores)) / np.std(lcs_scores)
 
         # BM25 Score
         filtered_corpus = [corpus_bm25[str(file)] for file in source]
