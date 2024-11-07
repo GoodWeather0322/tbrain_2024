@@ -1,0 +1,18 @@
+source_path: ./source/競賽資料集/reference_text
+question_path: ./source/競賽資料集/dataset/preliminary/questions_example.json
+answer_path: ./source/競賽資料集/dataset/preliminary/ground_truths_example.json
+
+output_dir: ./output
+data_type: ocr_text
+clean_text: True
+
+retriever: bm25
+tokenizer: ckip
+normalize: minmax
+
+reranker: bge-reranker-v2-m3
+max_tokens: 128
+stride: 64
+
+alpha: 0.09
+scorer: True
