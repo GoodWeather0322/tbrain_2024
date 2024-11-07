@@ -22,8 +22,8 @@ if __name__ == "__main__":
     best_alpha = 0
     best_beta = 0
     best_answer_dict_path = ""
-    for i in np.arange(0.01, 0.30, 0.01):
-        for j in np.arange(0.01, 0.30, 0.01):
+    for i in np.arange(0.00, 0.06, 0.01):
+        for j in np.arange(0.22, 0.30, 0.01):
             alpha = round(i, 2)
             beta = round(j, 2)
             # if alpha + beta > 1:

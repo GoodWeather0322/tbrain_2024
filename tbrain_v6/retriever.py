@@ -24,6 +24,9 @@ class Retriever:
         else:
             document_words = document.split()
 
+        # query_words = [char for char in "".join(query_words)]
+        # document_words = [char for char in "".join(document_words)]
+
         # 初始化動態規劃表格，大小為 (len(query_words) + 1) x (len(document_words) + 1)
         dp = [[0] * (len(document_words) + 1) for _ in range(len(query_words) + 1)]
 

@@ -1,0 +1,14 @@
+**question 1**
+如何開通簡訊密碼服務?
+**answer 1**
+[ATM開通方式](https://www.esunbank.com.tw/event/member/otp/flow/atm.html)
+網路銀行開通方式
+至臨櫃申請開通
+
+
+**question 2**
+網路銀行開通簡訊密碼的步驟是什麼?
+**answer 2**
+1. 登入網路銀行，並將讀卡機連接到您的個人電腦
+2. 選擇「個人設定與服務」，點選「簡訊密碼設定」
+

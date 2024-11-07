@@ -1,0 +1,24 @@
+**question 1**
+玉山行動銀行支援哪些台灣Pay功能?
+**answer 1**
+付款碼
+QR Code繳費
+
+
+**question 2**
+台灣Pay付款碼可以在哪些地方使用?
+**answer 2**
+有台灣Pay標誌之特店 (包含四大超商、頂好、屈臣氏等)
+
+
+**question 3**
+台灣Pay QR Code繳費支援哪些帳單繳費?
+**answer 3**
+「臺灣自來水」和「臺北自來水」帳單
+
+
+**question 4**
+台灣Pay付款碼特店名單在哪裡查詢?
+**answer 4**
+[台灣Pay官方網站>哪裡使用>金融卡>感應支付](https://www.taiwanpay.com.tw/content/info/map.aspx?filter=1)
+

@@ -12,6 +12,7 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 | exp 4    | ocr_text  | bm25      | ckip      | True       | 0.8  |    CKIP斷詞+文字清理 |
 
 
+
 ## v2 version code (BM25)
 
 | 實驗名稱 | data_type | retriever | tokenizer | clean_text | Precision  | 備註 |
@@ -20,6 +21,10 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 | exp 2    | ocr_text  | bm25      | jieba      | True       | 0.7933333  |   --  |
 | exp 3    | ocr_text  | bm25      | ckip      | False       | 0.7866667  |   --  |
 | exp 4    | ocr_text  | bm25      | ckip      | True       | 0.8133333  |   --  |
+| exp 5    | adobe_ocr_text  | bm25      | jieba      | False       | 0.7266667  |    -- |
+| exp 6    | adobe_ocr_text  | bm25      | jieba      | True       | 0.7866667  |    -- |
+| exp 7    | adobe_ocr_text  | bm25      | ckip      | False       | 0.7866667  |    -- |
+| exp 8    | adobe_ocr_text  | bm25      | ckip      | True       | 0.8  |   -- |
 
 ## v3 version code (Embedding)
 
@@ -28,11 +33,19 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 | exp 1    | ocr_text  | consine      | bge-m3      | 4096       | 3072   | True       | 0.7533333  |    --  |
 | exp 2    | ocr_text  | consine      | bge-m3      | 512       | 128   | True       | 0.7933333  |    --  |
 | exp 3    | ocr_text  | consine      | bge-large-zh-v1.5      | 500       | 128   | True       | 0.8066667  |    --  |
-| exp 4    | ocr_text  | sparse      | bge-m3      | 4096       | 3072   | True       | 0.7933333  |    --  |
-| exp 5    | ocr_text  | sparse      | bge-m3      | 256       | 128   | True       | 0.86  |   --  |
-| exp 6    | ocr_text  | sparse      | bge-m3     | 128       | 64   | True       | 0.8333333  |   --  |
-| exp 7    | ocr_text  | sparse      | bge-large-zh-v1.5     | 256       | 128   | True       | 0.82  |   --  |
-| exp 8    | ocr_text  | sparse      | bge-large-zh-v1.5     | 128       | 64   | True       | 0.8733333  |   --  |
+| exp 4    | ocr_text  | sparse       | bge-m3      | 4096       | 3072   | True       | 0.7933333  |    --  |
+| exp 5    | ocr_text  | consine      | bge-m3      | 256       | 128   | True       | 0.86  |   --  |
+| exp 6    | ocr_text  | consine      | bge-m3     | 128       | 64   | True       | 0.8333333  |   --  |
+| exp 7    | ocr_text  | consine      | bge-large-zh-v1.5     | 256       | 128   | True       | 0.82  |   --  |
+| exp 8    | ocr_text  | consine      | bge-large-zh-v1.5     | 128       | 64   | True       | 0.8733333  |   --  |
+| exp 9    | adobe_ocr_text  | consine      | bge-m3      | 4096       | 3072   | True       | 0.74  |    --  |
+| exp 10   | adobe_ocr_text  | consine      | bge-m3      | 512       | 128   | True       | 0.7933333  |    --  |
+| exp 11   | adobe_ocr_text  | consine      | bge-large-zh-v1.5      | 500       | 128   | True       | 0.xxx  |    --  |
+| exp 12   | adobe_ocr_text  | sparse       | bge-m3      | 4096       | 3072   | True       | 0.xxx  |    --  |
+| exp 13   | adobe_ocr_text  | consine      | bge-m3      | 256       | 128   | True       | 0.8533333  |   --  |
+| exp 14   | adobe_ocr_text  | consine      | bge-m3     | 128       | 64   | True       | 0.8266667  |   --  |
+| exp 15   | adobe_ocr_text  | consine      | bge-large-zh-v1.5     | 256       | 128   | True       | 0.8333333  |   --  |
+| exp 16   | adobe_ocr_text  | consine      | bge-large-zh-v1.5     | 128       | 64   | True       | 0.8533333  |   --  |
 
 ## v4 version code (Reranker)
 

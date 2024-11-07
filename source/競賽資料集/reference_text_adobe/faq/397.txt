@@ -1,0 +1,30 @@
+**question 1**
+為什麼無法登入補件網頁？
+**answer 1**
+輸入的身分證字號、出生年月日與手機號碼不正確
+需於3日內進行補件，超逾3日則需重新申請數位帳戶
+
+
+**question 2**
+補件需要在多久內完成？
+**answer 2**
+3日內
+
+
+**question 3**
+超過補件期限應該怎麼辦？
+**answer 3**
+重新申請數位帳戶
+
+
+**question 4**
+補件網頁的進度查詢/補件平台連結是什麼？
+**answer 4**
+[https://www.esunbank.com.tw/s/InquireAndUpload/Auth/OTPAuth](https://www.esunbank.com.tw/s/InquireAndUpload/Auth/OTPAuth)
+
+
+**question 5**
+重新申請數位帳戶的連結是什麼？
+**answer 5**
+[https://www.esunbank.com.tw/s/OpenAccount/?ven=faq](https://www.esunbank.com.tw/s/OpenAccount/?ven=faq)
+
