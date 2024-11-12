@@ -1,7 +1,6 @@
 # tbrain_2024
 AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應用
 
-
 # 實驗結果 
 ## v1 version code (BM25)      
 | 實驗名稱 | data_type | retriever | tokenizer | clean_text | Precision  | 備註 |
@@ -135,10 +134,3 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 | exp 1    | adobe_ocr_text  | ckip   | bge-large-zh-v1.5     | 128       | 64   | minmax   | 0.xx   | 0.xx   | 5   | True       | 0.xx  |    --  |
 | exp 1    | adobe_ocr_text  | ckip   | bge-large-zh-v1.5     | 64       | 32   | minmax   | 0.xx   | 0.xx   | 5   | True       | 0.xx  |    --  |
 | exp 1    | ocr_text  | ckip   | bge-large-zh-v1.5     | 64       | 32   | minmax   | 0.03   | 0.03   | 8   | True       | 0.9066667  |    --  |
-
-tmux 0
-v11 adobe_ocr
-embedding_model: bge-large-zh-v1.5
-max_tokens: 64
-stride: 32
-

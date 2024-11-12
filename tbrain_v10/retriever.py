@@ -52,7 +52,7 @@ class Retriever:
     def _fusion_retrieve(
         self, category, qid, query, query_embedding_file, source, corpus
     ):
-        score_dict_name = "topn_score_v10"
+        score_dict_name = "topn_score_v10_competition"
         if settings.clean_text:
             score_dict_name += "_clean"
 
@@ -194,7 +194,7 @@ class Retriever:
 
     def fusion_retrieve(self, questions, dataset):
 
-        answer_dict_name = "answer_v10"
+        answer_dict_name = "answer_v10_competition"
         if settings.clean_text:
             answer_dict_name += "_clean"
 

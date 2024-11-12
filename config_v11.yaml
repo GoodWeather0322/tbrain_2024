@@ -1,5 +1,5 @@
 source_path: ./source/競賽資料集/reference_text
-question_path: ./source/競賽資料集/dataset/preliminary/questions_example.json
+question_path: ./Test_Dataset_Preliminary_1/questions_preliminary.json
 answer_path: ./source/競賽資料集/dataset/preliminary/ground_truths_example.json
 
 output_dir: ./output
@@ -11,12 +11,12 @@ tokenizer: ckip
 normalize: minmax
 
 retriever_v3: cosine_similarity
-embedding_model: bge-m3
-max_tokens: 256
-stride: 128
+embedding_model: bge-large-zh-v1.5
+max_tokens: 64
+stride: 32
 
 top_n: 5
 
 alpha: 0.09
 beta: 0.5
-scorer: True
+scorer: False

@@ -88,7 +88,7 @@ class DataLoader:
         # 就用V10已經計算好的來做
         # 就用V10已經計算好的來做
         # 就用V10已經計算好的來做
-        corpus_name = "corpus_v10"
+        corpus_name = "corpus_v10_competition"
         if settings.clean_text:
             corpus_name += "_cleaned"
         if settings.retriever == "sparse":
@@ -103,7 +103,7 @@ class DataLoader:
         )
         dataset_embedding_folder.mkdir(parents=True, exist_ok=True)
 
-        question_json_name = "questions_v10"
+        question_json_name = "questions_v10_competition"
         if settings.clean_text:
             question_json_name += "_cleaned"
         if settings.retriever == "sparse":

@@ -45,14 +45,17 @@ class Retriever:
                     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 
         # LCS 長度位於表格的右下角，除以最短的長度做normalize
-        return dp[len(query_words)][len(document_words)] / min(
+        try:
+            return dp[len(query_words)][len(document_words)] / min(
             len(query_words), len(document_words)
         )
+        except:
+            return 0
 
     def _fusion_retrieve(
         self, category, qid, query, query_embedding_file, source, corpus
     ):
-        score_dict_name = "topn_score_v11"
+        score_dict_name = "topn_score_v11_competition"
         if settings.clean_text:
             score_dict_name += "_clean"
 
@@ -191,7 +194,7 @@ class Retriever:
 
     def fusion_retrieve(self, questions, dataset):
 
-        answer_dict_name = "answer_v11"
+        answer_dict_name = "answer_v11_competition"
         if settings.clean_text:
             answer_dict_name += "_clean"
 

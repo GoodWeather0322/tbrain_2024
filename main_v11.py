@@ -12,7 +12,7 @@ from tbrain_v11.settings import settings
 
 if __name__ == "__main__":
 
-    settings.output_dir = Path(settings.output_dir) / "v11"
+    settings.output_dir = Path(settings.output_dir) / "v11_competition"
     settings.output_dir.mkdir(exist_ok=True, parents=True)
 
     answer_dict_path_list = []
@@ -23,8 +23,8 @@ if __name__ == "__main__":
 
     # for i in np.arange(0.00, 0.10, 0.01):
     #     for j in np.arange(0.00, 0.10, 0.01):
-    i = 0.0
-    j = 0.0
+    i = 0.01
+    j = 0.09
     alpha = round(i, 2)
     beta = round(j, 2)
     # if alpha + beta > 1:
