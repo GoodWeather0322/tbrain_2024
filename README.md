@@ -4,10 +4,6 @@ AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應�
 ## 環境
 
 ```bash
-python 3.12
-```
-
-```bash
 pip install -r requirements.txt
 ```
 
@@ -17,5 +13,5 @@ pip install -r requirements.txt
 ## 運行
 
 ```bash
-python main_v10.py
+python main.py
 ```
