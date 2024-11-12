@@ -1,5 +1,0 @@
-**question 1**
-若 未 收到 驗證信 該 怎麼辦 ?
-**answer1**
-請 登入 [ 玉山 電子 支付 網站 ] ( https://web.esunbank.com.tw/ECPay/WebPage/Login.aspx ) 帳戶 資訊 >Email 設定 ， 重新 輸入 Email 進行 驗證 。
-

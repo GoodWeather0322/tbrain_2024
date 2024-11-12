@@ -1,6 +1,0 @@
-
-如何安裝pcscd套件
-
-使用Synaptic套件管理程式以pcsc關鍵字搜尋選取如圖的 libccidlibpcscperlpcscdpcsctools四個套件然後按下套用安裝即可
-
-

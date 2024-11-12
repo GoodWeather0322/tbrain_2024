@@ -1,5 +1,0 @@
-**question 1**
-辦卡 時 如果 有 缺 資料 ， 應 如何 補 件 ?
-**answer1**
-於 官網 [ 上 傳 補件 ] ( https://card.esunbank.com.tw/Esun Creditweb/txnproc/mail?gi=AJ#b )
-

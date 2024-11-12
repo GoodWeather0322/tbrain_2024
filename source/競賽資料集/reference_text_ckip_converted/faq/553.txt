@@ -1,5 +1,0 @@
-**question 1**
-轉出 款項 後 銀行 帳號 備註 欄位 顯示 為 何 ?
-**answer1**
-「 ESUNPAY 」
-
