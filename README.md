@@ -1,6 +1,8 @@
 # tbrain_2024
 AI CUP 2024 玉山人工智慧公開挑戰賽－RAG與LLM在金融問答的應用
 
+HI
+
 # 實驗結果 
 ## v1 version code (BM25)      
 | 實驗名稱 | data_type | retriever | tokenizer | clean_text | Precision  | 備註 |
