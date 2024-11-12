@@ -17,6 +17,6 @@ stride: 32
 
 top_n: 40
 
-alpha: 0.09
-beta: 0.5
+alpha: 0.01
+beta: 0.15
 scorer: False

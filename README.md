@@ -15,3 +15,17 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
+
+## PDF OCR 預處理
+使用[DocXChain](https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/Applications/DocXChain)套件進行PDF OCR預處理
+
+
+## 版本
+
+- v10: 使用BM25 + Embedding + LCS方法進行資料檢索
+
+## 參數設定
+
+- 請參考config_v10.yaml
+- alpha: 0.01
+- beta: 0.15
